@@ -9,5 +9,6 @@ namespace WpfApplication1
     class Class1
     {
         public Class1() { }
+        //ted/x
     }
 }
