@@ -8,7 +8,11 @@ namespace WpfApplication1
 {
     class Class1
     {
-        public Class1() { }
-        //ted/x
+        public int X { get; set; }
+        public Class1()
+        {
+        }
+        
+            
     }
 }
