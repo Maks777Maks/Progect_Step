@@ -1,0 +1,25 @@
+﻿<Controls:MetroWindow x:Class="Chat_TCP_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat_TCP_"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="433*"/>
+            <ColumnDefinition Width="84*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.ColumnSpan="2" Name="_scrollViewer" Background="Red">
+            <ListBox  Name="ListBox"/>
+        </ScrollViewer>
+        <TextBox Grid.Row="1" Name="textbox"/>
+        <!--<Button Grid.Column="1" Grid.Row="1" Content="SEND" Click="Button_Click"/>-->
+    </Grid>
+</Controls:MetroWindow>

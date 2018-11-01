@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wcf(Calc)", "Wcf(Calc)\Wcf(Calc).csproj", "{B6F70077-EA3A-44E5-BD65-519D0895BE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc(WPF)", "Calc(WPF)\Calc(WPF).csproj", "{8BE862AD-D98E-426F-AC08-190797E40CD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6F70077-EA3A-44E5-BD65-519D0895BE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F70077-EA3A-44E5-BD65-519D0895BE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F70077-EA3A-44E5-BD65-519D0895BE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F70077-EA3A-44E5-BD65-519D0895BE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BE862AD-D98E-426F-AC08-190797E40CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE862AD-D98E-426F-AC08-190797E40CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE862AD-D98E-426F-AC08-190797E40CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE862AD-D98E-426F-AC08-190797E40CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

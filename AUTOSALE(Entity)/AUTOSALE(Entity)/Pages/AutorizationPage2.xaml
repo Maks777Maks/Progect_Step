@@ -1,0 +1,42 @@
+﻿<Page x:Class="AUTOSALE_Entity_.Pages.AutorizationPage2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AUTOSALE_Entity_.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AutorizationPage2">
+
+    <Grid Background="#333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Content="NAME" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="2" Name="NAME"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="MAIL" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="2" Grid.Row="1" Name="MAIL"/>
+        <Label Grid.Column="1" Grid.Row="2" Content="PHONE" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Name="PHONE"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="CITY" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ComboBox Grid.Column="2" Grid.Row="3" Name="CITY">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name_EN}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="BACK" Grid.Column="1" Grid.Row="4" Margin="10 25 10 25" Click="Back"/>
+        <Button Content="OK" Grid.Column="2" Grid.Row="4" Margin="10 25 10 25" Click="Next"/>
+    </Grid>
+</Page>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeneralCalc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICalcStandart_GetPlus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlus" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetPlus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetMinus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinus" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetMinus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetMulti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMulti" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetMulti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivision" />
+  </wsdl:message>
+  <wsdl:message name="ICalcStandart_GetDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcAdvansed_Factorial_InputMessage">
+    <wsdl:part name="parameters" element="tns:Factorial" />
+  </wsdl:message>
+  <wsdl:message name="ICalcAdvansed_Factorial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FactorialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcAdvansed_Pow_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pow" />
+  </wsdl:message>
+  <wsdl:message name="ICalcAdvansed_Pow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalcScience_Discriminant_InputMessage">
+    <wsdl:part name="parameters" element="tns:Discriminant" />
+  </wsdl:message>
+  <wsdl:message name="ICalcScience_Discriminant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiscriminantResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICalcStandart">
+    <wsdl:operation name="GetPlus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcStandart/GetPlus" message="tns:ICalcStandart_GetPlus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcStandart/GetPlusResponse" message="tns:ICalcStandart_GetPlus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcStandart/GetMinus" message="tns:ICalcStandart_GetMinus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcStandart/GetMinusResponse" message="tns:ICalcStandart_GetMinus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMulti">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcStandart/GetMulti" message="tns:ICalcStandart_GetMulti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcStandart/GetMultiResponse" message="tns:ICalcStandart_GetMulti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcStandart/GetDivision" message="tns:ICalcStandart_GetDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcStandart/GetDivisionResponse" message="tns:ICalcStandart_GetDivision_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICalcAdvansed">
+    <wsdl:operation name="Factorial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcAdvansed/Factorial" message="tns:ICalcAdvansed_Factorial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcAdvansed/FactorialResponse" message="tns:ICalcAdvansed_Factorial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcAdvansed/Pow" message="tns:ICalcAdvansed_Pow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcAdvansed/PowResponse" message="tns:ICalcAdvansed_Pow_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICalcScience">
+    <wsdl:operation name="Discriminant">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalcScience/Discriminant" message="tns:ICalcScience_Discriminant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalcScience/DiscriminantResponse" message="tns:ICalcScience_Discriminant_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalcStandart" type="tns:ICalcStandart">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPlus">
+      <soap:operation soapAction="http://tempuri.org/ICalcStandart/GetPlus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinus">
+      <soap:operation soapAction="http://tempuri.org/ICalcStandart/GetMinus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMulti">
+      <soap:operation soapAction="http://tempuri.org/ICalcStandart/GetMulti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <soap:operation soapAction="http://tempuri.org/ICalcStandart/GetDivision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalcAdvance" type="tns:ICalcAdvansed">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Factorial">
+      <soap:operation soapAction="http://tempuri.org/ICalcAdvansed/Factorial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pow">
+      <soap:operation soapAction="http://tempuri.org/ICalcAdvansed/Pow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalcSciense" type="tns:ICalcScience">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Discriminant">
+      <soap:operation soapAction="http://tempuri.org/ICalcScience/Discriminant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralCalc">
+    <wsdl:port name="CalcStandart" binding="tns:CalcStandart">
+      <soap:address location="http://192.168.1.39:8733/Design_Time_Addresses/Calc" />
+    </wsdl:port>
+    <wsdl:port name="CalcAdvance" binding="tns:CalcAdvance">
+      <soap:address location="http://192.168.1.39:8733/Design_Time_Addresses/Advance" />
+    </wsdl:port>
+    <wsdl:port name="CalcSciense" binding="tns:CalcSciense">
+      <soap:address location="http://192.168.1.39:8733/Design_Time_Addresses/Sciense" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

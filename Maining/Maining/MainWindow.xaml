@@ -1,0 +1,67 @@
+﻿<Controls:MetroWindow x:Class="Maining.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maining"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainWindow" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.RowSpan="3" Name="List" SelectionChanged="Select">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="3" Background="Red" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Name:" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Power:" Grid.Row="1" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Power}" HorizontalAlignment="Left"/>
+                            
+                            <ListBox Name="SelectCrypt" Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding cripto}" SelectedItem="{Binding SelectedCripto}" HorizontalContentAlignment="Stretch" Margin="5">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Text="{Binding Value,StringFormat={}{0:F5}}" Margin="20,1,1,1"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            
+                            <StackPanel Grid.Column="1" Grid.Row="2">
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Stretch">
+            <Button Content="START" FontWeight="Bold" FontSize="28" Margin="22,12,22,12" Click="Button_Click"/>
+            <Button Content="STOP" FontSize="28" FontWeight="Bold" Margin="22,12,22,12" Click="Button_Click_1"/>
+            <Button Content="Add VideoCard" FontWeight="Bold" FontSize="18" Margin="22,12,22,12" Click="Button_Click_2"/>
+            <Button Content="Add Cripto" FontWeight="Bold" FontSize="18" Margin="22,12,22,12" Click="Button_Click_3"/>
+            <Button Content="Change VideoCard" FontWeight="Bold" FontSize="18" Margin="22,12,22,12" Click="Button_Click_4"/>
+        </StackPanel>
+        
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,91 @@
+﻿<Window x:Class="Courswork_Entity_AUTOSALE_.Detail_Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Courswork_Entity_AUTOSALE_"
+        mc:Ignorable="d"
+        Title="Detail_Search" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="261*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="5" Background="DarkBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="253*"/>
+                <ColumnDefinition Width="289*"/>
+                <ColumnDefinition Width="218*"/>
+            </Grid.ColumnDefinitions>
+            <Label  MouseLeftButtonDown="Click_Logo" 
+                   Content="AUTOSALE" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold" 
+                   FontStyle="Italic" 
+                   FontSize="40" 
+                   Cursor="Hand" Height="54" 
+                   Margin="24,36,23,36" Width="206">
+                <Label.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="DarkBlue" Offset="1"/>
+                    </RadialGradientBrush>
+                </Label.Background>
+            </Label>
+            <Grid Grid.Column="3" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Expander Grid.RowSpan="2" Style="{DynamicResource ExpanderStyle1}" Name="Expand">
+                    <Expander.Header>
+                        <StackPanel Name="stack1" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image1" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/United-Kingdom-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Name="Sel_Lang" Content="EN"/>
+                        </StackPanel>
+                    </Expander.Header>
+                    <StackPanel>
+                        <StackPanel Name="stack2" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image2" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/Ukraine-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Content="UA"/>
+                        </StackPanel>
+                        <StackPanel Name="stack3" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image3" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/United-Kingdom-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Content="EN"/>
+                        </StackPanel>
+                        <StackPanel Name="stack4" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image4" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/Russia-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Content="RUS"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Expander>
+                <Label Name="Label_Add" Grid.Column="1" Content="Submit your ad" Cursor="Hand"/>
+                <Label Name="Label_Login" Grid.Column="2" Content="Login" Cursor="Hand" MouseLeftButtonDown="Login"/>
+            </Grid>
+        </Grid>
+        <ListBox Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="4" Background="DarkRed"/>
+        <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Header="Двигатель">
+            <StackPanel>
+                <CheckBox Content="AAAAAAAAAA" Margin="20 20 20 20"/>
+                <CheckBox/>
+                <CheckBox/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

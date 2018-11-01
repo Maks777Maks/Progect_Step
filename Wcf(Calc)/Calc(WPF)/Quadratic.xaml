@@ -1,0 +1,23 @@
+﻿<Window x:Class="Calc_WPF_.Quadratic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calc_WPF_"
+        mc:Ignorable="d"
+        Title="Quadratic" Height="300" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Margin="30 10 30 10" Name="T1"/>
+        <TextBox Grid.Row="1" Margin="30 10 30 10" Name="T2"/>
+        <TextBox Grid.Row="2" Margin="30 10 30 10" Name="T3"/>
+        <TextBox Grid.Row="3" Margin="30 10 30 10" Name="T4"/>
+        <Button Grid.Row="4" Margin="30 10 30 10" Content="OK" Click="Button_Click"/>
+    </Grid>
+</Window>

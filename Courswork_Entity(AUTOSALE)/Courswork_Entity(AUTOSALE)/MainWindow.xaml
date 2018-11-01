@@ -1,0 +1,165 @@
+﻿<Window x:Class="Courswork_Entity_AUTOSALE_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Courswork_Entity_AUTOSALE_"
+        mc:Ignorable="d"
+        Title="MainWindow" WindowState="Maximized">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="261*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="90*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="5" Background="DarkBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="253*"/>
+                <ColumnDefinition Width="289*"/>
+                <ColumnDefinition Width="218*"/>
+            </Grid.ColumnDefinitions>
+            <Label  MouseLeftButtonDown="Click_Logo" 
+                   Content="AUTOSALE" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold" 
+                   FontStyle="Italic" 
+                   FontSize="40" 
+                   Cursor="Hand" Height="54" 
+                   Margin="24,36,23,36" Width="206">
+                <Label.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="DarkBlue" Offset="1"/>
+                    </RadialGradientBrush>
+                </Label.Background>
+            </Label>
+            <Grid Grid.Column="3" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Expander Grid.RowSpan="2" Style="{DynamicResource ExpanderStyle1}" Name="Expand">
+                    <Expander.Header>
+                        <StackPanel Name="stack1" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image1" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/United-Kingdom-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Name="Sel_Lang" Content="EN"/>
+                        </StackPanel>
+                    </Expander.Header>
+                    <StackPanel>
+                        <StackPanel Name="stack2" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image2" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/Ukraine-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Content="UA"/>
+                        </StackPanel>
+                        <StackPanel Name="stack3" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image3" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/United-Kingdom-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Content="EN"/>
+                        </StackPanel>
+                        <StackPanel Name="stack4" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="Click_stack">
+                            <Image Name="Image4" Source="http://icons.iconarchive.com/icons/hopstarter/square-flags/128/Russia-Flag-icon.png" Height="20" Width="20"/>
+                            <Label Content="RUS"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Expander>
+                <Label Name="Label_Add" Grid.Column="1" Content="Submit your ad" Cursor="Hand" MouseLeftButtonDown="Ads"/>
+                <Label Name="Label_Login" Grid.Column="2" Content="Login" Cursor="Hand" MouseLeftButtonDown="Login"/>
+            </Grid>
+        </Grid>
+        <ListBox Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="4" Background="CornflowerBlue"/>
+        <Grid Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Margin="1 -40 1 -50" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Name="Buy" Content="Buy" Grid.ColumnSpan="4" FontWeight="Bold" FontStyle="Italic" FontSize="30" Foreground="Orange"/>
+            <Button Name="Moto" Grid.Row="1" Cursor="Hand" Click="Select_Transport">
+                <Image Source="http://icons.iconarchive.com/icons/iconshock/brilliant-transportation/128/cruise-bike-icon.png"/>
+            </Button>
+            <Button Name="Car" Grid.Row="1" Grid.Column="1" Cursor="Hand" Click="Select_Transport">
+                <Image Source="http://icons.iconarchive.com/icons/iconshow/transport/128/Sportscar-car-icon.png"/>
+            </Button>
+            <Button Name="Truck" Grid.Row="1" Grid.Column="2" Cursor="Hand" Click="Select_Transport">
+                <Image Source="http://icons.iconarchive.com/icons/cute-little-factory/social-trucks/128/rss-icon.png"/>
+            </Button>
+            <Button Name="Bus" Grid.Row="1" Grid.Column="3" Cursor="Hand" Click="Select_Transport">
+                <Image Source="http://icons.iconarchive.com/icons/bevel-and-emboss/car/256/van-bus-icon.png"/>
+            </Button>
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="10 1 10 1">
+                <TextBlock Name="Block_Brand">Brand</TextBlock>
+                <ComboBox Name="Brand"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="10 1 10 1">
+                <TextBlock Name="Block_Model">Model</TextBlock>
+                <ComboBox/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="10 1 10 1">
+                <TextBlock Name="Block_Price">Price</TextBlock>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="10 1 10 1">
+                <TextBlock Name="Block_Registr">1st Registration</TextBlock>
+                <ComboBox Name="Registration"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="10 1 10 1">
+                <TextBlock Name="Block_Mill">Mileage to</TextBlock>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="10 1 10 1">
+                <TextBlock Name="Block_Fuel">Type of fuel</TextBlock>
+                <ComboBox Name="Fuel" Tag="{Binding ElementName= Sel_Lang, Path=Content}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock >
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger  Binding="{Binding ElementName=Sel_Lang, Path=Content}" Value="UA">
+                                                <Setter Property="Text" Value="{Binding Fuel_UA}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger  Binding="{Binding ElementName=Sel_Lang, Path=Content}" Value="RUS">
+                                                <Setter Property="Text" Value="{Binding Fuel_RUS}"></Setter>
+                                            </DataTrigger>
+                                            <DataTrigger  Binding="{Binding ElementName=Sel_Lang, Path=Content}" Value="EN">
+                                                <Setter Property="Text" Value="{Binding Fuel_EN}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </DataTemplate>
+                        
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <Button Name="Button_Det_Search" Grid.Row="5" Grid.ColumnSpan="2" Margin="45 15 45 15" Content="Detailed Search" Cursor="Hand" Click="Button_Det_Search_Click"/>
+            <Button Name="Button_Search" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Margin="10 10 10 10" Content="SEARCH" Cursor="Hand"/>
+            
+        </Grid>
+
+    </Grid>
+</Window>

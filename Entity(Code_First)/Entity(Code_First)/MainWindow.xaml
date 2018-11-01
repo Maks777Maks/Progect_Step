@@ -1,0 +1,77 @@
+﻿<Controls:MetroWindow x:Class="Entity_Code_First_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Entity_Code_First_"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:MyConverter x:Key="converter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="321*"/>
+            <ColumnDefinition Width="96*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="259*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="list1" Margin="5,5,5,5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <Grid>
+                            <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold" FontStyle="Italic" FontFamily="Papyrus" />
+                        </Grid>
+                        <!--<TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold" FontStyle="Italic" FontFamily="Papyrus" />-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ScrollViewer Grid.Column="1" Name="_scrollViewer" Background="Red">
+            <!--<Border BorderBrush="Red" BorderThickness="5" Name="_contentCtrl" Height="200" VerticalAlignment="Top"/>-->
+            <ListBox Grid.Column="1" Name="list2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                        <Border  Tag="{Binding ElementName= list1, Path=SelectedItem}" Padding="10" Background="Cyan" CornerRadius="15">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="HorizontalAlignment">
+                                        <Setter.Value>
+                                            <MultiBinding Converter="{StaticResource converter}">
+                                                <Binding Path="PersonSender"></Binding>
+                                                <Binding Path="Tag" RelativeSource="{RelativeSource Self}"></Binding>
+                                            </MultiBinding>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Border.Style>
+                            <StackPanel Name="Stack" Height="auto" Orientation="Horizontal">
+                        <TextBlock Foreground="Black" Text="{Binding Time}" Margin="10,10,10,10" FontSize="16"/>
+                        <TextBlock Name="TB1" Foreground="Red" Text="{Binding PersonSender.Name}" Margin="10,10,5,10" FontWeight="Bold" TextDecorations="Underline" FontSize="18"/>
+                        <TextBlock Name="TB2" Foreground="Green" Text="{Binding PersonGetter.Name}" Margin="5,10,5,10" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock Name="TB3" Foreground="Black" Text="{Binding Text}" Margin="10,10,10,10" FontSize="16"/>
+                    </StackPanel>
+                        </Border>
+                    </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </ScrollViewer>
+        <Button Grid.Row="1"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="Chat" IsEnabled="true" AcceptsReturn="True" TextWrapping="Wrap"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="SEND" FontWeight="Normal" FontSize="20" Click="Button_Click"/>
+        <ListBox Grid.Column="2" Name="list3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold" FontStyle="Italic" FontFamily="Papyrus"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Controls:MetroWindow>

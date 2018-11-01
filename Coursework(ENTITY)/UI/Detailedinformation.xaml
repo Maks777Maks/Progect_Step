@@ -1,0 +1,67 @@
+﻿<Window x:Class="UI.Detailedinformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d"
+        Title="Detailedinformation" Height="300" Width="300">
+    <Grid Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="14*" />
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="14*"/>
+        </Grid.ColumnDefinitions>
+        <Image   Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Name="Image1" />
+        <Button Grid.Column="1" Grid.Row="0" Content="&lt;" Opacity="0.1" FontSize="80" Click="Button2_Click"/>
+        <Button Grid.Column="2" Grid.Row="0" Content="&gt;" Opacity="0.1" FontSize="80" Click="Button1_Click" />
+        <ListBox SelectionChanged="List1_SelectionChanged" Grid.Column="1" Grid.Row="1" Name="List1"  Visibility="Collapsed" />
+        <Grid Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Background="Lavender">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="14*"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="14*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="51*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="54*"/>
+                <RowDefinition Height="58*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="56*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="name" Grid.Row="1" Grid.Column="1" Text= "{Binding Path=Name}" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red" Height="40" Margin="30,0"/>
+            <TextBlock Name="price" Grid.Row="1" Grid.Column="2"  FontSize="30"  HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Margin="30,0,0,0" Foreground="Red"/>
+            <TextBlock Name="city"  Grid.Row="1" Grid.Column="2"  FontSize="30" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="40" Margin="128,0,100,0" Foreground="Red"/>
+            <TextBlock Text="Year" Grid.Row="2" Grid.Column="1"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="28" Margin="96,11" Width="36"/>
+            <TextBlock Name="year" Grid.Row="2" Grid.Column="2"  FontSize="20" Text="{Binding Path=Year}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="30,11,0,11"/>
+            <TextBlock Text="Mileage" Grid.Row="3" Grid.Column="1"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="28" Margin="78,13" Width="72"/>
+            <TextBlock Name="mileage" Grid.Row="3" Grid.Column="2"  FontSize="20" Text="{Binding Path=Miliage}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="30,13,0,13"/>
+            <TextBlock Text="Engine" Grid.Row="4" Grid.Column="1"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="28" Margin="84,16,84,14" Width="60"/>
+            <TextBlock Name="engine" Grid.Row="4" Grid.Column="2"  FontSize="20" Text="{Binding Path=Engine}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="30,15,0,15"/>
+            <TextBlock Text="Fuel" Grid.Row="5" Grid.Column="1"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="26" Margin="96,16,96,18" Width="36"/>
+            <TextBlock Name="fuel" Grid.Row="5" Grid.Column="2"  FontSize="20" Text="{Binding Path=Fuel}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="30,17,0,17"/>
+            <TextBlock Text="Transmission" Grid.Row="6" Grid.Column="1"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="26" Margin="58,17" Width="112"/>
+            <TextBlock Name="transmission" Grid.Row="6" Grid.Column="2"  FontSize="20" Text="{Binding Path=Transmission}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="30,17,0,17"/>
+            <TextBlock Text="Description" Grid.Row="7" Grid.Column="1"  FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Height="26" Margin="64,31,64,33" Width="100"/>
+            <ScrollViewer Grid.Row="7" Grid.Column="2">
+                <TextBlock Name="Text_Description" FontSize="20" Margin="10,10,10,10" Text="{Binding Path=_Text}" TextWrapping="Wrap"/>
+            </ScrollViewer>
+            <TextBlock Name="user_name" Grid.Row="8" Grid.Column="1"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Margin="114,13,114,17"/>
+            <TextBlock Name="tel" Grid.Row="8" Grid.Column="2"  FontSize="20"  HorizontalAlignment="Left"  VerticalAlignment="Center" Height="40" Margin="30,9,0,7"/>
+            <Image Stretch="Fill" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Source="Resources/images2.jpg" Margin="5,0,5,5"/>
+            <Image Stretch="Fill" Grid.Column="0" Grid.Row="5" Grid.RowSpan="4" Source="Resources/images 7.jpg" Margin="5,0,5,5"/>
+            <Image Stretch="Fill" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" Source="Resources/images3.jpg" Margin="5,0,5,5"/>
+            <Image Stretch="Fill" Grid.Column="3" Grid.Row="5" Grid.RowSpan="4" Source="Resources/images1.jpg" Margin="5,0,5,5"/>
+        </Grid>
+    </Grid>
+</Window>

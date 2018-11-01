@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IStudent_AddStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudent_AddStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudent_GetStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudent_GetStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMark_AddMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMark" />
+  </wsdl:message>
+  <wsdl:message name="IMark_AddMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMark_GetMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMark" />
+  </wsdl:message>
+  <wsdl:message name="IMark_GetMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMark_GetMarkByStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarkByStudent" />
+  </wsdl:message>
+  <wsdl:message name="IMark_GetMarkByStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarkByStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubject_AddSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSubject" />
+  </wsdl:message>
+  <wsdl:message name="ISubject_AddSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubject_GetSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubject" />
+  </wsdl:message>
+  <wsdl:message name="ISubject_GetSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IStudent">
+    <wsdl:operation name="AddStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudent/AddStudent" message="tns:IStudent_AddStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudent/AddStudentResponse" message="tns:IStudent_AddStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudent/GetStudent" message="tns:IStudent_GetStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudent/GetStudentResponse" message="tns:IStudent_GetStudent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMark">
+    <wsdl:operation name="AddMark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMark/AddMark" message="tns:IMark_AddMark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMark/AddMarkResponse" message="tns:IMark_AddMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMark/GetMark" message="tns:IMark_GetMark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMark/GetMarkResponse" message="tns:IMark_GetMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkByStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMark/GetMarkByStudent" message="tns:IMark_GetMarkByStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMark/GetMarkByStudentResponse" message="tns:IMark_GetMarkByStudent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISubject">
+    <wsdl:operation name="AddSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubject/AddSubject" message="tns:ISubject_AddSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubject/AddSubjectResponse" message="tns:ISubject_AddSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubject/GetSubject" message="tns:ISubject_GetSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubject/GetSubjectResponse" message="tns:ISubject_GetSubject_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceStudent" type="tns:IStudent">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddStudent">
+      <soap:operation soapAction="http://tempuri.org/IStudent/AddStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudent">
+      <soap:operation soapAction="http://tempuri.org/IStudent/GetStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceMark" type="tns:IMark">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddMark">
+      <soap:operation soapAction="http://tempuri.org/IMark/AddMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMark">
+      <soap:operation soapAction="http://tempuri.org/IMark/GetMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkByStudent">
+      <soap:operation soapAction="http://tempuri.org/IMark/GetMarkByStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSubject" type="tns:ISubject">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSubject">
+      <soap:operation soapAction="http://tempuri.org/ISubject/AddSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubject">
+      <soap:operation soapAction="http://tempuri.org/ISubject/GetSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="ServiceStudent" binding="tns:ServiceStudent">
+      <soap:address location="http://192.168.1.40:8733/Design_Time_Addresses/Journal/Student" />
+    </wsdl:port>
+    <wsdl:port name="ServiceMark" binding="tns:ServiceMark">
+      <soap:address location="http://192.168.1.40:8733/Design_Time_Addresses/Journal/Mark" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSubject" binding="tns:ServiceSubject">
+      <soap:address location="http://192.168.1.40:8733/Design_Time_Addresses/Journal/Subject" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
